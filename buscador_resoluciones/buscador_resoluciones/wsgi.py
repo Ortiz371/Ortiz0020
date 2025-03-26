@@ -7,10 +7,10 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 """
 
-import os
+# Reemplaza ESTO:
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
 
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'buscador_resoluciones.settings')
-
-application = get_wsgi_application()
+# Por ESTO (versión moderna):
+from whitenoise import WhiteNoise
+application = WhiteNoise(application, root="staticfiles")
