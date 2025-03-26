@@ -119,6 +119,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 # Al final de settings.py:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Nombre comúnmente usado
+STATIC_URL = '/static/'  # URL base para archivos estáticos (ya debería estar)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Carpeta adicional con archivos estáticos
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
